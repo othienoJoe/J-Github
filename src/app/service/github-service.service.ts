@@ -12,12 +12,17 @@ export class GithubServiceService {
   private clientsecret = '384d34bdc6fe15788f2e996301531360cf9257b6';
 
   constructor(private http:HttpClient) {
-    console.log("github service is now ready");
+    console.log("Github service is now ready");
     this.username = 'othienoJoe';
   }
 
   getGithubInfo() {
     return this.http.get("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
+    .pipe(map(result => result));
+  }
+
+  getGithubRepos() {
+    return this.http.get("https://api.github.com/users/" + this.username + "/repos?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
     .pipe(map(result => result));
   }
 }
