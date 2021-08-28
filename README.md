@@ -18,23 +18,23 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Click <a href="">View Site</a> to visit the site
 
 
-## Code scaffolding
+## Screenshots
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<hr>
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## User Steps;
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<hr>
 
-## Running end-to-end tests
+<ol>
+* <li>Have a Github account.</li>
+* <li>Find other accounts and repos when you search.</li>
+* <li>Get to know if the authors are available for hire.</li>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* <li>Don't copy anything on the profiles!</li>
 
-## Further help
+# Technology Used
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# J-Github
+
