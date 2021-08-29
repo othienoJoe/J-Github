@@ -29,12 +29,27 @@ Click <a href="">View Site</a> to visit the site
 <hr>
 
 <ol>
-* <li>Have a Github account.</li>
-* <li>Find other accounts and repos when you search.</li>
-* <li>Get to know if the authors are available for hire.</li>
+<li>Have a Github account.</li>
+<li>Find other accounts and repos when you search.</li>
+<li>Get to know if the authors are available for hire.</li>
 
-* <li>Don't copy anything on the profiles!</li>
+<li>Don't copy anything on the profiles!</li>
 
 # Technology Used
 
+<ul>
+<li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+<li><a href="https://jquery.com/">Jquery</a></li>
+<li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+<li><a href="https://html.com/">HTML</a></li>
+<li><a href="">CSS</a></li>
+</ul>
 
+# Contact information
+
+If you have any question or contributions,please email me at [ <a href="nicothieno93@gmail.com">Email here</a> ]
+
+# Licence
+
+MIT Licence
+Copyright &copy; 2021 <m>Othieno Nicodemus</m>
