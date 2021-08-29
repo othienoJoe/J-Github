@@ -2,7 +2,7 @@
 
 <hr>
 
-<a href="">Othieno Nicodemus</a>
+<a href="https://othienojoe.github.io/Nicodemus-Othieno/">Othieno Nicodemus</a>
 
 # Description
 
