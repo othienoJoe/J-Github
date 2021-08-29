@@ -8,13 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GithubComponent } from './github/github.component';
 import { GithubFormComponent } from './github-form/github-form.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     GithubComponent,
-    GithubFormComponent
+    GithubFormComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
