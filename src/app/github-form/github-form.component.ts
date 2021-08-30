@@ -8,23 +8,31 @@ import { GithubServiceService } from '../service/github-service.service';
   styleUrls: ['./github-form.component.css']
 })
 export class GithubFormComponent implements OnInit {
-  public profile: any;
-  public repos: any;
   public username: any;
+  public githubProfile: any;
+  public githubRepos: any;
+  public errMessage: any;
 
   constructor(private githubService: GithubServiceService) { }
 
   findProfile() {
-    this.githubService.getGithubInfo(this.username);
-    this.githubService.getGithubInfo().subscribe(github => {
-      console.log(github);
-      this.profile = this.profile;
-    });
+    this.githubService.getGithubInfo(this.username).subscribe(
+      (github)=> {
+        this.githubProfile = github;
+      },
+      (error) => {
+        this.errMessage = error;
+      }
+    );
 
-    this.githubService.getGithubRepos().subscribe(repos => {
-      console.log(repos);
-      this.repos = repos;
-    })
+    this.githubService.getRepos(this.username).subscribe(
+      (repos: any) => {
+        this.githubRepos = repos;
+      },
+      (error: any) => {
+        this.errMessage = error;
+      }
+    );
   }
 
   ngOnInit(): void {
