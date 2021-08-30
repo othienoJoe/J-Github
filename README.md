@@ -35,7 +35,7 @@ Click <a href="">View Site</a> to visit the site
 
 <li>Don't copy anything on the profiles!</li>
 
-# Technology Used
+## Technology Used
 
 <ul>
 <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
@@ -45,11 +45,11 @@ Click <a href="">View Site</a> to visit the site
 <li><a href="">CSS</a></li>
 </ul>
 
-# Contact information
+## Contact information
 
 If you have any question or contributions,please email me at [ <a href="nicothieno93@gmail.com">Email here</a> ]
 
-# Licence
+## Licence
 
 MIT Licence
 Copyright &copy; 2021 <m>Othieno Nicodemus</m>
