@@ -15,7 +15,7 @@ export class GithubFormComponent implements OnInit {
   constructor(private githubService: GithubServiceService) { }
 
   findProfile() {
-    this.githubService.updateProfile(this.username);
+    this.githubService.getGithubInfo(this.username);
     this.githubService.getGithubInfo().subscribe(github => {
       console.log(github);
       this.profile = this.profile;

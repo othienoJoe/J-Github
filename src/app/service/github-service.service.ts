@@ -1,32 +1,39 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError, retry } from 'rxjs/operators';
+import { Observable,throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GithubServiceService {
 
-  username:string;
+
   clientid!: '6e294d394a064777a345';
   clientsecret = '384d34bdc6fe15788f2e996301531360cf9257b6';
 
-  constructor(private http:HttpClient) {
-    console.log("Github service is now ready");
-    this.username = 'othienoJoe';
+  constructor(private HttpClient:HttpClient) {
   }
 
-  getGithubInfo() {
-    return this.http.get("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
-    .pipe(map(result => result));
+  public getGithubInfo(username:string):Observable<any> {
+    let profileURL=`https://api.github.com/users/${username}?client_id=${this.clientid}&client_secret=${this.clientsecret}`;
+
+    return this.HttpClient.get<any>(profileURL).pipe(retry(1), catchError(this.errorHandler));
   }
 
-  getGithubRepos() {
-    return this.http.get("https://api.github.com/users/" + this.username + "/repos?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
-    .pipe(map(result => result));
+  public getGithubRepos() {
+    let profileURL=`https://api.github.com/users/${}}/repos?client_id=${this.clientid}&client_secret=${this.clientsecret}`;
+
+    return this.HttpClient.get<any>(profileURL).pipe(retry(1), catchError(this.errorHandler));
   }
 
-  updateProfile(username:string) {
-    this.username = username;
+  public errorHandler(error:HttpErrorResponse){
+    let errMsg:string;
+    if(error.error instanceof ErrorEvent){
+      errMsg=`MESSAGE:${error.error.message}`
+    }else{
+      errMsg=`STATUS:${error.status} MESSAGE:${error.message}`
+    }
+    return throwError(errMsg)
   }
 }

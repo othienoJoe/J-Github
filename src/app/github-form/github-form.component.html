@@ -1,8 +1,17 @@
 <div class="container" id="Search">
-  <form action="">
+
+  <form (submit)='findProfile()'>
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search git users with username" [(ngModel)]="username" name="username" (keyup)="findProfile()">
+      <input type="text" class="form-control" placeholder="Search git users with username" [(ngModel)]="username" name="username">
     </div>
-    {{username}}
+    <div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
   </form>
+
+  <!-- <div class="row">
+    <div class="col">
+      <app-github [profile]='profile'></app-github>
+    </div>
+  </div> -->
 </div>
