@@ -7,9 +7,9 @@ import { map } from 'rxjs/operators';
 })
 export class GithubServiceService {
 
-  private username:string;
-  private clientid : '6e294d394a064777a345' | undefined;
-  private clientsecret = '384d34bdc6fe15788f2e996301531360cf9257b6';
+  username:string;
+  clientid!: '6e294d394a064777a345';
+  clientsecret = '384d34bdc6fe15788f2e996301531360cf9257b6';
 
   constructor(private http:HttpClient) {
     console.log("Github service is now ready");
