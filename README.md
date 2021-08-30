@@ -34,6 +34,8 @@ Click <a href="">View Site</a> to visit the site
 <li>Get to know if the authors are available for hire.</li>
 
 <li>Don't copy anything on the profiles!</li>
+</ol>
+
 
 ## Technology Used
 
