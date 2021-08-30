@@ -8,8 +8,14 @@ import { GithubServiceService } from '../service/github-service.service';
 export class GithubComponent implements OnInit {
   profile: any;
   repos: any;
+  username!: string;
 
   constructor(private githubService: GithubServiceService) {
+
+  }
+
+  findProfile() {
+    this.githubService.updateProfile(this.username);
     this.githubService.getGithubInfo().subscribe(github => {
       console.log(github);
       this.profile = this.profile;
