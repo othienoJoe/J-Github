@@ -13,23 +13,24 @@ export class GithubFormComponent implements OnInit {
   public githubRepos: any;
   public errMessage: any;
 
-  constructor(private githubService: GithubServiceService) { }
+  constructor(private githubServiceService: GithubServiceService) { }
 
-  findProfile() {
-    this.githubService.getGithubInfo(this.username).subscribe(
-      (github)=> {
-        this.githubProfile = github;
+  public findProfile() {
+    this.githubServiceService.getGithubInfo(this.username).subscribe(
+      (data)=> {
+        this.githubProfile = data;
+        console.log(this.githubProfile)
       },
       (error) => {
         this.errMessage = error;
       }
     );
 
-    this.githubService.getRepos(this.username).subscribe(
-      (repos: any) => {
-        this.githubRepos = repos;
+    this.githubServiceService.getRepos(this.username).subscribe(
+      (data) => {
+        this.githubRepos = data;
       },
-      (error: any) => {
+      (error) => {
         this.errMessage = error;
       }
     );

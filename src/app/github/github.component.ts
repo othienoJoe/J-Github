@@ -9,7 +9,7 @@ export class GithubComponent implements OnInit {
   // public profile: any;
   // public repos: any;
   // public username: any;
-  @Input()profile:any
+  @Input() githubProfile:any;
 
   constructor() {
 
