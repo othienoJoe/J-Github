@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 // import { GithubServiceService } from '../service/github-service.service';
 @Component({
   selector: 'app-github',
@@ -10,6 +10,7 @@ export class GithubComponent implements OnInit {
   // public repos: any;
   // public username: any;
   @Input() githubProfile:any;
+  @Input() githubRepos:any
 
   constructor() {
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';
 import { Observable,throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -10,7 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class GithubServiceService {
 
-  Environment = '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'
+  // Environment = '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'
   // clientid!: '6e294d394a064777a345';
   // clientsecret = '384d34bdc6fe15788f2e996301531360cf9257b6';
 
@@ -18,14 +19,14 @@ export class GithubServiceService {
 
   }
 
-  public getGithubInfo(username:string):Observable<any> {
+  public getGithubInfo(username:any):Observable<any> {
     let profileURL=`https://api.github.com/users/${username}?access_token=${environment.apiKey}`;
 
     return this.HttpClient.get<any>(profileURL).pipe(retry(1), catchError(this.errorHandler));
   }
 
-  public getRepos(repos:any):Observable<any> {
-    let profileURL=`https://api.github.com/users/${repos}/repos?client_id=${this.clientid}&client_secret=${this.clientsecret}`;
+  public getRepos(username:any):Observable<any> {
+    let profileURL=`https://api.github.com/users/${username}/repos?access_token=${environment.apiKey}`;
 
     return this.HttpClient.get<any>(profileURL).pipe(retry(1), catchError(this.errorHandler));
   }
